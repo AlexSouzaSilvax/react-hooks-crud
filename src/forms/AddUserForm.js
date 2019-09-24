@@ -12,12 +12,15 @@ const AddUserForm = props => {
 
 	return (
 		<form
-			onSubmit={event => {
-				event.preventDefault()
+			onSubmit={event => {					
+				//Implementa metodo https salvar na base.
+				alert(`Salvou Usuário. ${user.name} - ${user.username}`);
+				event.preventDefault();
 				if (!user.name || !user.username) return
-
+				//adiciona o obj para lista de usuarios
 				props.addUser(user)
-				setUser(initialFormState)
+				//limpa o form
+				setUser(initialFormState)			
 			}}
 		>
 			<label>Nome</label>
